@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpeedyTec — Assistência Técnica Premium</title>
+  <meta name="description" content="Assistência técnica profissional em smartphones e eletrônicos. Peças originais, serviço rápido e garantia em todos os reparos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .ms {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Mobile menu override */
+    @media (max-width: 900px) {
+      .nav__burger { display: flex !important; }
+      .mob-menu {
+        display: none !important;
+        position: fixed !important;
+        right: -100% !important;
+        top: 0 !important;
+        left: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: var(--bg-deepest) !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        padding: 5rem var(--px) 2rem !important;
+        gap: 1rem !important;
+        z-index: 1000 !important;
+        transition: right 0.35s ease !important;
+        overflow-y: auto !important;
+      }
+      .mob-menu.open {
+        display: flex !important;
+        right: 0 !important;
+      }
+      .mob-menu a {
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: none !important;
+        width: 100% !important;
+        padding: 0.75rem 0 !important;
+      }
+    }
+    @media (min-width: 901px) {
+      .nav__burger { display: none !important; }
+      .mob-menu { display: none !important; }
+    }
+    /* Mobile menu close button */
+    .mob-menu__close {
+      position: fixed !important;
+      top: 1rem !important;
+      right: 1.5rem !important;
+      background: none !important;
+      border: none !important;
+      cursor: pointer !important;
+      padding: 0.5rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 1001 !important;
+      color: var(--text-primary) !important;
+    }
+    .mob-menu__close .ms { font-size: 1.5rem !important; }
+    @media (max-width: 900px) {
+      .nav__logo { flex: 0 0 auto !important; max-width: 60px !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="nav">
+  <div class="nav__in">
+    <a href="index.html" class="nav__logo">
+      <img src="icone_speedytec.png" alt="SpeedyTec" onerror="this.style.display='none'">
+      <span class="nav__logo-text">SpeedyTec</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html" class="active">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="produtos.html">Produtos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <a href="https://wa.me/55?text=Olá!%20Gostaria%20de%20um%20orçamento%20pela%20SpeedyTec." class="btn btn--solid nav__cta" target="_blank" rel="noopener">
+      <span class="ms" style="font-variation-settings:'FILL' 1; font-size:0.9rem;">chat</span>
+      Falar com Especialista
+    </a>
+    <button class="nav__burger" id="menuToggle" aria-label="Menu">
+      <span class="ms" id="burgerIcon">menu</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mob-menu" id="mobileMenu">
+  <button class="mob-menu__close" id="menuClose" aria-label="Fechar menu">
+    <span class="ms">close</span>
+  </button>
+  <a href="index.html" class="active">Início</a>
+  <a href="sobre.html">Sobre</a>
+  <a href="servicos.html">Serviços</a>
+  <a href="produtos.html">Produtos</a>
+  <a href="contato.html">Contato</a>
+  <a href="https://wa.me/55?text=Olá!%20Gostaria%20de%20um%20orçamento%20pela%20SpeedyTec." class="btn btn--solid" target="_blank" rel="noopener" style="margin-top:1rem;">Falar no WhatsApp</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero__bg">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYkLQyFm1tjX5ClYgLQOUhf_3urN8dTlQEHT3653aAcr9sxwPuHXd1gRQndZRtngHtgZKfdHEs7yTvtgqWnOoAaNacaqXH5DMnItJNTbJTAkhB37vwpqdw3UkSH100YkMDWA9_I6D1jKY1A5M9KDypEYruLuvpa1998-_rjCvMZeThaZV8wALqF0ngKUxA7n8yOXj5tYwedZczBdLxJ9jw5SRcConvakRsTwPYIg82BQCJ_KQ3RkQYPj3PxFNswQpb9pz0d6wdkxo" alt="Circuito eletrônico de alta precisão" />
+  </div>
+  <div class="hero__body reveal">
+    <h1 class="t-display">Precisão em<br/>Cada Conexão.</h1>
+    <p class="t-body">Assistência técnica profissional em smartphones e eletrônicos. Projetados para durar, restaurados para performar.</p>
+    <a href="https://wa.me/55?text=Olá!%20Gostaria%20de%20um%20orçamento%20pela%20SpeedyTec." class="btn btn--solid" target="_blank" rel="noopener">
+      Falar com Especialista
+      <span class="ms" style="font-size:0.9rem;">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== STATEMENT ===== -->
+<section class="statement">
+  <div style="max-width: var(--max-w); margin: 0 auto;">
+    <p class="statement__text reveal">Além do reparo.<br/>Nós restauramos.</p>
+  </div>
+</section>
+
+<!-- ===== SERVICES 2-CARD ===== -->
+<section class="svc-grid">
+  <div style="max-width: var(--max-w); margin: 0 auto;">
+    <div class="svc-grid__cards">
+      <div class="svc-card reveal" onclick="location.href='servicos.html'" style="cursor:pointer;">
+        <img class="svc-card__img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3bE7mbE48tQMyCAwBbBybO4ygXd4P9VcHWcJLjDoaHiIQUC4GySVommJi3QlVhSRmLcTGedVhGmqBPDDbYICzfvmQS--PTW8YJCpqdz0wlaw7Y2s63P0NQqvR2pE2ZVYb4Z9xPyQbLtanIy32gSIPinaBclXExV5_oLew4MzTv4sSEv5NGcoV2n5I51hvVL2w5o5IBCUpfzxIjIL7aykMvR5rJZQ9jUqaEmIV_XxHt2LXU-XA-ByniMREsN8dHR4M6yb2Phlfbao" alt="Restauração de Smartphone" />
+        <div class="svc-card__shade"></div>
+        <div class="svc-card__body">
+          <p class="svc-card__tag">Serviço Principal</p>
+          <h3 class="svc-card__title">Restauração de Smartphones</h3>
+          <div class="svc-card__line"></div>
+          <span class="svc-card__link">
+            EXPLORAR <span class="ms" style="font-size:0.9rem;">arrow_outward</span>
+          </span>
+        </div>
+      </div>
+      <div class="svc-card reveal" onclick="location.href='servicos.html'" style="cursor:pointer;">
+        <img class="svc-card__img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnCdjFqytXlMKLKBsdNQqCVlZYIr2oYQoOZy9Ur7ip4rZFqya1Bn0UKx-oqmuwIfKrlK6UjOrR1X9w0MygsjjSU75a4j-JPWRg7PLcV6zZ77P1CJroQz0JEeoisXE72jNXn442u8kGAImrbwVDrivCNg0FUh5pnpCTfSNWZezl1F18h_T6DtT7r5Y4Z1mwGSf78oYnRSJZ5vKipFMS1nfm2Hao1bHpi_R6gr2p2V5XeQ62ZwL7OY_t7vW4tCdVcx7g2oaQSrAoJ3s" alt="Micro-Soldagem Avançada" />
+        <div class="svc-card__shade"></div>
+        <div class="svc-card__body">
+          <p class="svc-card__tag">Especializado</p>
+          <h3 class="svc-card__title">Micro-Soldagem Avançada</h3>
+          <div class="svc-card__line"></div>
+          <span class="svc-card__link">
+            EXPLORAR <span class="ms" style="font-size:0.9rem;">arrow_outward</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="features">
+  <div class="features__in" style="max-width: var(--max-w); margin: 0 auto;">
+    <div class="features__img reveal">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFWvYSWavNNhK1aVn3a386g03YAGLYGvxxEDi13VLR16VIimDY7mSs0qR3A-84iteV9lcCiyp9NKKay0kbXm7qIvnJ3mXeaoV9CB6pmSZ_3fPpynkPStwx5EafnxCVxxF9v23gsxLuswY02_gj5mTdu_5VNMhJkv2pFbxF_TIwxVbTrwtZDgm1WeFh-VQhSooVfW_7OwNbwUkiWnhpn-jxrSfd2Rdvqg-orQQzGk5lF3zRWMJGkbMb93P72L2_BsnJpOrEQugjioA" alt="Técnico especializado SpeedyTec" />
+    </div>
+    <div class="features__content reveal">
+      <h2 class="features__title">O Padrão SpeedyTec</h2>
+      <div class="feat-item">
+        <span class="ms feat-item__icon">bolt</span>
+        <div>
+          <p class="feat-item__name">Serviço Rápido</p>
+          <p class="feat-item__desc">Agilidade sem abrir mão da qualidade. Reparos simples em até 2 horas com nossos protocolos rigorosos de controle.</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <span class="ms feat-item__icon">verified</span>
+        <div>
+          <p class="feat-item__name">Peças de Qualidade</p>
+          <p class="feat-item__desc">Utilizamos exclusivamente componentes OEM ou superiores em cada projeto de restauração.</p>
+        </div>
+      </div>
+      <div class="feat-item">
+        <span class="ms feat-item__icon">shield</span>
+        <div>
+          <p class="feat-item__name">Serviço Garantido</p>
+          <p class="feat-item__desc">Cobertura completa de garantia em todos os reparos e serviços de micro-soldagem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIFERENCIAIS ===== -->
+<section class="difs">
+  <div style="max-width: var(--max-w); margin: 0 auto;">
+    <div class="sec-head reveal">
+      <p class="sec-head__tag">Por que nos escolher</p>
+      <h2 class="sec-head__title">O Diferencial<br/>SpeedyTec</h2>
+      <p class="sec-head__sub">Cada detalhe do nosso processo foi pensado para oferecer o melhor resultado para o seu dispositivo.</p>
+    </div>
+    <div class="difs__grid">
+      <div class="dif-card reveal">
+        <span class="ms dif-card__icon">biotech</span>
+        <p class="dif-card__name">Diagnóstico Preciso</p>
+        <p class="dif-card__desc">Análise por imagem térmica e testes de sinal para identificar a causa raiz, sem chute e sem surpresa no orçamento.</p>
+      </div>
+      <div class="dif-card reveal">
+        <span class="ms dif-card__icon">inventory_2</span>
+        <p class="dif-card__name">Peças Originais</p>
+        <p class="dif-card__desc">Trabalhamos apenas com componentes de primeira linha para garantir máxima durabilidade e performance do seu aparelho.</p>
+      </div>
+      <div class="dif-card reveal">
+        <span class="ms dif-card__icon">workspace_premium</span>
+        <p class="dif-card__name">Garantia de 90 Dias</p>
+        <p class="dif-card__desc">Confiança total no nosso trabalho. Todos os reparos têm garantia de 90 dias, sem burocracia e sem letras miúdas.</p>
+      </div>
+      <div class="dif-card reveal">
+        <span class="ms dif-card__icon">groups</span>
+        <p class="dif-card__name">Equipe Certificada</p>
+        <p class="dif-card__desc">Técnicos com formação especializada em eletrônica e treinamento constante nas últimas tecnologias do mercado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<style>
+  #depPrev, #depNext {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.25rem;
+    height: 2.25rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+    font-family: 'Material Symbols Outlined';
+    font-size: 1.25rem;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+  }
+  #depPrev { left: 0; }
+  #depNext { right: 0; }
+  @media (max-width: 768px) {
+    #depPrev, #depNext { display: flex; }
+    #depsTrack .dep-card { display: none; }
+    #depsTrack .dep-card.dep-active { display: block; }
+  }
+</style>
+<section class="deps">
+  <div style="max-width: var(--max-w); margin: 0 auto;">
+    <div class="sec-head reveal">
+      <p class="sec-head__tag">Clientes satisfeitos</p>
+      <h2 class="sec-head__title">O Que Dizem<br/>Nossos Clientes</h2>
+    </div>
+    <div style="position:relative; padding:0 2.5rem;">
+      <button id="depPrev" aria-label="Anterior">arrow_back_ios</button>
+      <div class="deps__grid" id="depsTrack">
+        <div class="dep-card reveal">
+          <div class="dep-card__stars">★★★★★</div>
+          <p class="dep-card__quote">"Levei meu iPhone com a tela quebrada e em menos de 2 horas estava perfeito como novo. Serviço impecável, técnico muito profissional. Com certeza voltarei!"</p>
+          <div class="dep-card__foot">
+            <span class="dep-card__name">Carlos M.</span>
+            <span class="dep-card__device">iPhone 14 Pro — Troca de Tela</span>
+          </div>
+        </div>
+        <div class="dep-card reveal">
+          <div class="dep-card__stars">★★★★★</div>
+          <p class="dep-card__quote">"Meu notebook deu problema na placa-mãe e disseram em outros lugares que não tinha conserto. A SpeedyTec resolveu em um dia. Recomendo demais!"</p>
+          <div class="dep-card__foot">
+            <span class="dep-card__name">Ana L.</span>
+            <span class="dep-card__device">MacBook Pro — Reparo de Placa</span>
+          </div>
+        </div>
+        <div class="dep-card reveal">
+          <div class="dep-card__stars">★★★★★</div>
+          <p class="dep-card__quote">"Atendimento excelente, preço justo e garantia no serviço. Levei o celular da minha mãe e ficou zero bala. Indico para todos os amigos!"</p>
+          <div class="dep-card__foot">
+            <span class="dep-card__name">Rafael S.</span>
+            <span class="dep-card__device">Samsung Galaxy S23 — Bateria</span>
+          </div>
+        </div>
+      </div>
+      <button id="depNext" aria-label="Próximo">arrow_forward_ios</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="sec-head reveal">
+      <p class="sec-head__tag">Tire suas dúvidas</p>
+      <h2 class="sec-head__title">Perguntas<br/>Frequentes</h2>
+    </div>
+    <div class="faq__list">
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Qual é o prazo para o reparo?
+          <span class="ms faq-item__ico">add</span>
+        </button>
+        <div class="faq-item__a">
+          <p>A maioria dos reparos simples — troca de tela, bateria ou conector — é realizada no mesmo dia, em até 2 horas. Reparos mais complexos como micro-soldagem podem levar de 24 a 48 horas. Sempre informamos o prazo exato no momento do orçamento.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Como funciona a garantia do serviço?
+          <span class="ms faq-item__ico">add</span>
+        </button>
+        <div class="faq-item__a">
+          <p>Todos os reparos têm garantia de 90 dias. Caso o mesmo problema ocorra dentro do período de garantia, realizamos o reparo sem custo adicional — sem burocracia e sem discussão.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Vocês usam peças originais?
+          <span class="ms faq-item__ico">add</span>
+        </button>
+        <div class="faq-item__a">
+          <p>Sim. Trabalhamos exclusivamente com componentes OEM (Original Equipment Manufacturer) ou de qualidade superior. Nunca utilizamos peças genéricas que possam comprometer a performance ou a durabilidade do dispositivo.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          O diagnóstico tem custo?
+          <span class="ms faq-item__ico">add</span>
+        </button>
+        <div class="faq-item__a">
+          <p>O diagnóstico inicial é gratuito. Após a análise, fornecemos um orçamento detalhado sem compromisso. Você decide se deseja prosseguir com o reparo ou não.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Quais dispositivos vocês atendem?
+          <span class="ms faq-item__ico">add</span>
+        </button>
+        <div class="faq-item__a">
+          <p>Atendemos smartphones (iPhone, Samsung, Motorola, Xiaomi e outras marcas), tablets, notebooks e ultrabooks. Para dúvidas sobre um modelo específico, entre em contato via WhatsApp.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__q">
+          Posso acompanhar o status do reparo?
+          <span class="ms faq-item__ico">add</span>
+        </button>
+        <div class="faq-item__a">
+          <p>Sim! Mantemos o cliente informado durante todo o processo via WhatsApp. Você recebe atualizações sobre cada etapa e é avisado assim que o dispositivo estiver pronto para retirada.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINAL ===== -->
+<section class="cta-fin">
+  <div class="cta-fin__in">
+    <p class="cta-fin__tag reveal">Pronto para restaurar?</p>
+    <h2 class="cta-fin__title reveal">Seu Dispositivo<br/>Merece o Melhor.</h2>
+    <p class="cta-fin__sub reveal">Fale com nossos especialistas agora e receba um orçamento sem compromisso em minutos.</p>
+    <div class="cta-fin__btns reveal">
+      <a href="https://wa.me/55?text=Olá!%20Gostaria%20de%20um%20orçamento%20pela%20SpeedyTec." class="btn btn--solid" target="_blank" rel="noopener">
+        <span class="ms" style="font-variation-settings:'FILL' 1; font-size:0.9rem;">chat</span>
+        Falar no WhatsApp
+      </a>
+      <a href="servicos.html" class="btn btn--outline">Ver Serviços</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__in">
+    <div>
+      <p class="footer__brand">SpeedyTec</p>
+      <p class="footer__copy">© 2025 SpeedyTec. Engenharia de Precisão.</p>
+    </div>
+    <nav class="footer__links" aria-label="Links do rodapé">
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FAB ===== -->
+<a href="https://wa.me/55?text=Olá!%20Gostaria%20de%20um%20orçamento%20pela%20SpeedyTec." class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <span class="ms" style="font-variation-settings:'FILL' 1;">chat</span>
+</a>
+
+<script>
+  /* Mobile menu */
+  const toggle = document.getElementById('menuToggle');
+  const closeBtn = document.getElementById('menuClose');
+  const menu   = document.getElementById('mobileMenu');
+  const icon   = document.getElementById('burgerIcon');
+  const links  = menu.querySelectorAll('a');
+
+  function closeMenu() {
+    menu.classList.remove('open');
+    icon.textContent = 'menu';
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    icon.textContent = menu.classList.contains('open') ? 'close' : 'menu';
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  });
+
+  closeBtn.addEventListener('click', closeMenu);
+  links.forEach(link => { link.addEventListener('click', closeMenu); });
+
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target) && !toggle.contains(e.target) && menu.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) { closeMenu(); }
+  });
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-item__q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item   = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* Testimonials carousel (mobile) */
+  (function() {
+    var track = document.getElementById('depsTrack');
+    if (!track) return;
+    var cards = Array.from(track.querySelectorAll('.dep-card'));
+    var idx = 0;
+    function show(i) {
+      cards.forEach(function(c, j) { c.classList.toggle('dep-active', j === i); });
+    }
+    show(0);
+    document.getElementById('depPrev').addEventListener('click', function() {
+      idx = (idx - 1 + cards.length) % cards.length;
+      show(idx);
+    });
+    document.getElementById('depNext').addEventListener('click', function() {
+      idx = (idx + 1) % cards.length;
+      show(idx);
+    });
+  })();
+
+  /* Scroll reveal */
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
