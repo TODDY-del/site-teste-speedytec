@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redmi Note 15 — SpeedyTec</title>
+  <meta name="description" content="Redmi Note 15 por R$ 1.649,99 na SpeedyTec. Compre com suporte especializado via WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .ms {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal; font-style: normal;
+      line-height: 1; letter-spacing: normal;
+      text-transform: none; display: inline-block;
+      white-space: nowrap; -webkit-font-smoothing: antialiased;
+    }
+    @media (max-width: 900px) {
+      .nav__burger { display: flex !important; }
+      .mob-menu {
+        display: none !important;
+        position: fixed !important;
+        right: -100% !important;
+        top: 0 !important;
+        left: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: var(--bg-deepest) !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        padding: 5rem var(--px) 2rem !important;
+        gap: 1rem !important;
+        z-index: 1000 !important;
+        transition: right 0.35s ease !important;
+        overflow-y: auto !important;
+      }
+      .mob-menu.open { display: flex !important; right: 0 !important; }
+      .mob-menu a { font-size: 1rem !important; font-weight: 600 !important; letter-spacing: 0.06em !important; text-transform: none !important; width: 100% !important; padding: 0.75rem 0 !important; }
+    }
+    @media (min-width: 901px) {
+      .nav__burger { display: none !important; }
+      .mob-menu { display: none !important; }
+    }
+    .mob-menu__close { position: fixed !important; top: 1rem !important; right: 1.5rem !important; background: none !important; border: none !important; cursor: pointer !important; padding: 0.5rem !important; display: flex !important; align-items: center !important; justify-content: center !important; z-index: 1001 !important; color: var(--text-primary) !important; }
+    .mob-menu__close .ms { font-size: 1.5rem !important; }
+    @media (max-width: 900px) { .nav__logo { flex: 0 0 auto !important; max-width: 60px !important; } }
+
+    /* Product detail layout */
+    .pd-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem var(--px, 1.5rem);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 700px) {
+      .pd-wrap { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem var(--px, 1.25rem); }
+    }
+    .pd-img-wrap {
+      background: var(--bg-card, #111);
+      border: 1px solid var(--border, #222);
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 4/5;
+    }
+    .pd-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 2rem;
+    }
+    .pd-info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .pd-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent, #3b82f6); }
+    .pd-name { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; color: var(--text-primary, #fff); line-height: 1.1; }
+    .pd-price { font-size: 2rem; font-weight: 700; color: var(--text-primary, #fff); }
+    .pd-price span { font-size: 1rem; font-weight: 400; color: var(--text-secondary, #888); margin-left: 0.25rem; }
+    .pd-divider { height: 1px; background: var(--border, #222); }
+    .pd-specs { display: flex; flex-direction: column; gap: 0.75rem; }
+    .pd-spec { display: flex; justify-content: space-between; font-size: 0.875rem; }
+    .pd-spec__label { color: var(--text-secondary, #888); }
+    .pd-spec__val { color: var(--text-primary, #fff); font-weight: 600; }
+    .pd-btns { display: flex; flex-direction: column; gap: 0.75rem; }
+    .pd-back { font-size: 0.8125rem; color: var(--text-secondary, #888); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; margin-bottom: 0.5rem; }
+    .pd-back:hover { color: var(--text-primary, #fff); }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="nav">
+  <div class="nav__in">
+    <a href="index.html" class="nav__logo">
+      <img src="icone_speedytec.png" alt="SpeedyTec" onerror="this.style.display='none'">
+      <span class="nav__logo-text">SpeedyTec</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="produtos.html" class="active">Produtos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <a href="https://wa.me/55?text=Olá!%20Tenho%20interesse%20no%20Redmi%20Note%2015%20da%20SpeedyTec." class="btn btn--solid nav__cta" target="_blank" rel="noopener">
+      <span class="ms" style="font-variation-settings:'FILL' 1; font-size:0.9rem;">chat</span>
+      Falar com Especialista
+    </a>
+    <button class="nav__burger" id="menuToggle" aria-label="Menu">
+      <span class="ms" id="burgerIcon">menu</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mob-menu" id="mobileMenu">
+  <button class="mob-menu__close" id="menuClose" aria-label="Fechar menu">
+    <span class="ms">close</span>
+  </button>
+  <a href="index.html">Início</a>
+  <a href="sobre.html">Sobre</a>
+  <a href="servicos.html">Serviços</a>
+  <a href="produtos.html" class="active">Produtos</a>
+  <a href="contato.html">Contato</a>
+  <a href="https://wa.me/55?text=Olá!%20Tenho%20interesse%20no%20Redmi%20Note%2015%20da%20SpeedyTec." class="btn btn--solid" target="_blank" rel="noopener" style="margin-top:1rem;">Falar no WhatsApp</a>
+</div>
+
+<!-- ===== PRODUCT DETAIL ===== -->
+<main style="background:var(--bg-surface); min-height:70vh;">
+  <div class="pd-wrap">
+
+    <!-- Imagem -->
+    <div>
+      <a href="produtos.html" class="pd-back">
+        <span class="ms" style="font-size:1rem;">arrow_back</span> Voltar aos Produtos
+      </a>
+      <div class="pd-img-wrap" style="margin-top:0.75rem;">
+        <img id="mainPhoto" src="Fotos dos produtos/note15_foto1.webp" alt="Redmi Note 15" style="object-fit:cover;" />
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem; margin-top:0.5rem;">
+        <button onclick="setPhoto('Fotos dos produtos/note15_foto1.webp',this)" class="pd-thumb pd-thumb--active" style="padding:0; border:2px solid var(--accent,#3b82f6); border-radius:0.5rem; overflow:hidden; cursor:pointer; aspect-ratio:1; background:var(--bg-card,#111);">
+          <img src="Fotos dos produtos/note15_foto1.webp" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        </button>
+        <button onclick="setPhoto('Fotos dos produtos/note15_foto2.webp',this)" class="pd-thumb" style="padding:0; border:2px solid var(--border,#222); border-radius:0.5rem; overflow:hidden; cursor:pointer; aspect-ratio:1; background:var(--bg-card,#111);">
+          <img src="Fotos dos produtos/note15_foto2.webp" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        </button>
+        <button onclick="setPhoto('Fotos dos produtos/note15_foto3.webp',this)" class="pd-thumb" style="padding:0; border:2px solid var(--border,#222); border-radius:0.5rem; overflow:hidden; cursor:pointer; aspect-ratio:1; background:var(--bg-card,#111);">
+          <img src="Fotos dos produtos/note15_foto3.webp" alt="" style="width:100%; height:100%; object-fit:cover; display:block;" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="pd-info">
+      <p class="pd-tag">Xiaomi</p>
+      <h1 class="pd-name">Redmi Note 15</h1>
+      <p class="pd-price">R$ 1.649,99 <span>à vista</span></p>
+
+      <div class="pd-divider"></div>
+
+      <div class="pd-specs">
+        <div class="pd-spec">
+          <span class="pd-spec__label">Tela</span>
+          <span class="pd-spec__val">6.67" AMOLED FHD+</span>
+        </div>
+        <div class="pd-spec">
+          <span class="pd-spec__label">Câmera Principal</span>
+          <span class="pd-spec__val">108 MP</span>
+        </div>
+        <div class="pd-spec">
+          <span class="pd-spec__label">Bateria</span>
+          <span class="pd-spec__val">6000 mAh</span>
+        </div>
+        <div class="pd-spec">
+          <span class="pd-spec__label">Processador</span>
+          <span class="pd-spec__val">Snapdragon 4s Gen 2</span>
+        </div>
+        <div class="pd-spec">
+          <span class="pd-spec__label">Resistência</span>
+          <span class="pd-spec__val">IP64</span>
+        </div>
+        <div class="pd-spec">
+          <span class="pd-spec__label">Sistema</span>
+          <span class="pd-spec__val">Android 14 / MIUI</span>
+        </div>
+      </div>
+
+      <div class="pd-divider"></div>
+
+      <div class="pd-btns">
+        <a href="https://wa.me/55?text=Olá!%20Tenho%20interesse%20no%20Redmi%20Note%2015%20por%20R%24%201.649%2C99%20da%20SpeedyTec." class="btn btn--solid" target="_blank" rel="noopener" style="justify-content:center;">
+          <span class="ms" style="font-variation-settings:'FILL' 1; font-size:0.9rem;">chat</span>
+          Comprar via WhatsApp
+        </a>
+        <a href="contato.html" class="btn btn--outline" style="justify-content:center;">Outros canais de contato</a>
+      </div>
+
+      <p style="font-size:0.75rem; color:var(--text-muted); margin-top:0.5rem;">Preços e disponibilidade sujeitos a alteração. Consulte o estoque atualizado.</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__in">
+    <div>
+      <p class="footer__brand">SpeedyTec</p>
+      <p class="footer__copy">© 2025 SpeedyTec. Engenharia de Precisão.</p>
+    </div>
+    <nav class="footer__links">
+      <a href="sobre.html">Sobre</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="contato.html">Contato</a>
+      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FAB ===== -->
+<a href="https://wa.me/55?text=Olá!%20Tenho%20interesse%20no%20Redmi%20Note%2015%20da%20SpeedyTec." class="wa-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <span class="ms" style="font-variation-settings:'FILL' 1;">chat</span>
+</a>
+
+<script>
+  function setPhoto(src, btn) {
+    document.getElementById('mainPhoto').src = src;
+    document.querySelectorAll('.pd-thumb').forEach(b => { b.style.borderColor = 'var(--border,#222)'; });
+    btn.style.borderColor = 'var(--accent,#3b82f6)';
+  }
+  const toggle = document.getElementById('menuToggle');
+  const closeBtn = document.getElementById('menuClose');
+  const menu   = document.getElementById('mobileMenu');
+  const icon   = document.getElementById('burgerIcon');
+  const links  = menu.querySelectorAll('a');
+  function closeMenu() { menu.classList.remove('open'); icon.textContent = 'menu'; document.body.style.overflow = ''; }
+  toggle.addEventListener('click', () => { menu.classList.toggle('open'); icon.textContent = menu.classList.contains('open') ? 'close' : 'menu'; document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : ''; });
+  closeBtn.addEventListener('click', closeMenu);
+  links.forEach(link => { link.addEventListener('click', closeMenu); });
+  document.addEventListener('click', (e) => { if (!menu.contains(e.target) && !toggle.contains(e.target) && menu.classList.contains('open')) { closeMenu(); } });
+  window.addEventListener('resize', () => { if (window.innerWidth > 900) { closeMenu(); } });
+</script>
+</body>
+</html>
